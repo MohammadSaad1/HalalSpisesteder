@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "514721103643",
+    "firebase_url": "https://halalspisesteder-2040f.firebaseio.com",
+    "project_id": "halalspisesteder-2040f",
+    "storage_bucket": "halalspisesteder-2040f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514721103643:android:df976af69d1a238e421dbe",
+        "android_client_info": {
+          "package_name": "com.example.halalspisesteder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514721103643-08h18dgdrvpvsf3k88bthk12muui2hab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.halalspisesteder",
+            "certificate_hash": "5be8ec86f893720b70dd48821e045e2509cf9fc7"
+          }
+        },
+        {
+          "client_id": "514721103643-mink8kvgro3t19c7uuekqlnfiv55ssp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoOEDKP8gc8KvpJjC3auHSCBOa1Bp-BPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514721103643-mink8kvgro3t19c7uuekqlnfiv55ssp9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
