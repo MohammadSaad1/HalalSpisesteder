@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/nav_spisesteder" android:icon="@drawable/ic_view_carousel" android:title="Spisesteder" />
+<item android:id="@+id/nav_search" android:icon="@drawable/ic_search" android:title="Søg" />
+<item android:id="@+id/nav_settings" android:icon="@drawable/ic_settings" android:title="Indstillinger" />
+<item android:id="@+id/nav_account" android:icon="@drawable/ic_account" android:title="Konto" />
+<item android:id="@+id/nav_logout" android:icon="@drawable/ic_logout" android:title="Log ud" />
+</menu>
