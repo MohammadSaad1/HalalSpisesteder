@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     BottomAppBar bottomAppBar;
     FloatingActionButton fab;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,22 +33,6 @@ public class MainActivity extends AppCompatActivity {
         fab = (FloatingActionButton) findViewById(R.id.fab);
         bottomAppBar = (BottomAppBar) findViewById(R.id.bottom_app_bar);
         bottomAppBar.replaceMenu(R.menu.main_menu);
-        bottomAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.action_settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SettingsFragment()).commit();
-                    break;
-                    case R.id.action_account:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new AccountFragment()).commit();
-                        break;
-                }
-                return true;
-            }
-        });
 
         fab.setColorFilter(Color.WHITE);
 
@@ -62,11 +48,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new RestaurantFragment()).commit();
         }
+
+        setSupportActionBar(bottomAppBar);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SettingsFragment()).commit();
+                break;
+            case R.id.action_account:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new AccountFragment()).commit();
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
 }

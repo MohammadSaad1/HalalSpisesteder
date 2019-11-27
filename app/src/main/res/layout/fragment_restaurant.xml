@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Restaurant"
-        android:textColor="@color/darkgray"
+        android:textColor="@color/colorPrimary"
         android:gravity="center" />
 
 </LinearLayout>
