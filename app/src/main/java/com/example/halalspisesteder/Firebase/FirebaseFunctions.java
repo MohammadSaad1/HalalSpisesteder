@@ -2,6 +2,7 @@ package com.example.halalspisesteder.Firebase;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -45,19 +46,28 @@ public class FirebaseFunctions {
     }
 
 
-    public void SignIn(String email, String password, Activity activity) {
+    public void SignIn(String email, String password, final Activity activity) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(activity, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
                     FirebaseUser user = mAuth.getCurrentUser();
-                    Log.d(TAG, "signInUserWithEmail:success" + user.getEmail());
+
+                    activity.startActivity(new Intent(activity, MainActivity.class));
+
+
+                    Toast toast =  Toast.makeText(activity, "Successfully logged in", Toast.LENGTH_SHORT);
+                    toast.show();
+
 
 
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithEmail:failure", task.getException());
+
+                    Toast toast =  Toast.makeText(activity, task.getException().getMessage(), Toast.LENGTH_SHORT);
+                    toast.show();
                 }
             }
         });
